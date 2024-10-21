@@ -12,6 +12,19 @@ class Organization extends Model
     use HasFactory;
     use SoftDeletes;
 
+
+    protected $fillable = [
+        'account_id',
+        'name',
+        'email',
+        'city',
+        'country',
+        'address',
+        'phone',
+        'region',
+        'postal_code',
+    ];
+
     public function resolveRouteBinding($value, $field = null)
     {
         return $this->where($field ?? 'id', $value)->withTrashed()->firstOrFail();
