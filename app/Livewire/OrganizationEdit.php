@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Livewire\Forms\OrganizationForm;
+use App\Models\Account;
 use App\Models\Organization;
 use Livewire\Component;
 
@@ -13,7 +14,7 @@ class OrganizationEdit extends Component
 
     public $feedback = "";
 
-    public function mount($organization)
+    public function mount(Organization $organization)
     {
         $this->form->setOrganization($organization);
         $this->organization = $organization;
@@ -22,6 +23,7 @@ class OrganizationEdit extends Component
 
     public function save()
     {
+        $this->account_id = Account::whereName('Acme Corporation')->first()->id;
         $this->form->update();
         $this->feedback = "This organization has been updated successfully!";
     }

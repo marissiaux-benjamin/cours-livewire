@@ -45,20 +45,34 @@
             <tbody>
             @foreach($this->organizations as $organization)
                 <tr class="hover:bg-gray-100 focus-within:bg-gray-100">
-                    <td class="border-t"><a class="flex items-center px-6 py-4 focus:text-indigo-500"
-                                            href="/organizations/{{ $organization->id }}/edit">{{ $organization->name }}</a>
+                    <td class="border-t">
+                        <a class="flex items-center px-6 py-4 focus:text-indigo-500"
+                           href="/organizations/{{ $organization->id }}/edit"
+                           wire:navigate>
+                            {{ $organization->name }}
+                        </a>
                     </td>
-                    <td class="border-t"><a class="flex items-center px-6 py-4"
-                                            tabindex="-1"
-                                            href="/organizations/{{ $organization->id }}/edit">{{ $organization->city }}</a>
+                    <td class="border-t">
+                        <a class="flex items-center px-6 py-4"
+                           tabindex="-1"
+                           href="/organizations/{{ $organization->id }}/edit"
+                           wire:navigate>
+                            {{ $organization->city }}
+                        </a>
                     </td>
-                    <td class="border-t"><a class="flex items-center px-6 py-4"
-                                            tabindex="-1"
-                                            href="/organizations/{{ $organization->id }}/edit">{{ $organization->phone }}</a>
+                    <td class="border-t">
+                        <a class="flex items-center px-6 py-4"
+                           tabindex="-1"
+                           href="/organizations/{{ $organization->id }}/edit"
+                           wire:navigate>
+                            {{ $organization->phone }}
+                        </a>
                     </td>
-                    <td class="w-px border-t"><a class="flex items-center px-4"
-                                                 tabindex="-1"
-                                                 href="/organizations/{{ $organization->id }}/edit">
+                    <td class="w-px border-t">
+                        <a class="flex items-center px-4"
+                           tabindex="-1"
+                           href="/organizations/{{ $organization->id }}/edit"
+                           wire:navigate>
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  viewBox="0 0 20 20"
                                  class="block w-6 h-6 fill-gray-400">
